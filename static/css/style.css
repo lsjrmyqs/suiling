@@ -1,0 +1,199 @@
+/* =========================================
+   1. 基础设定 & 全局排版
+   ========================================= */
+body {
+    /* 把咱们的 ZhaoyuanSong 放在最前面，如果加载失败再用后面的备用字体 */
+    font-family: 'ZhaoyuanSong', "Noto Serif SC", STSong, serif;
+    color: #333;
+    line-height: 1.8; /* 稍微调大一点行距，宋体阅读会更舒服 */
+    background-color: #fff;
+    margin: 0;
+    padding: 40px 20px;
+}
+
+.main-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* =========================================
+   2. 顶部标题区 & 大头像 (封面图)
+   ========================================= */
+.site-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+.site-logo {
+    width: 120px;       /* 控制顶部封面大头像的宽度 */
+    height: 120px;      /* 控制顶部封面大头像的高度 */
+    border-radius: 50%; /* 让大头像变成完美圆形 */
+    object-fit: cover;  /* 防止图片被拉伸变形 */
+    margin-bottom: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* =========================================
+   段评功能提示框
+   ========================================= */
+.comment-notice {
+    background-color: #f7f7f5; /* 配合你首页目录框的柔和灰底 */
+    border-left: 4px solid #def9ff; /* 左侧加一条你人物卡悬浮时的粉色装饰线 */
+    padding: 12px 18px;
+    margin: 20px 0 30px 0; /* 控制它和标题、正文的间距 */
+    border-radius: 6px;
+    color: #444;
+    font-size: 0.95em;
+    line-height: 1.6;
+}
+.comment-notice .small-text {
+    font-size: 0.85em;
+    color: #777;
+    margin-top: 4px;
+    display: block;
+}
+
+/* =========================================
+   3. 首页两栏布局 (电脑端)
+   ========================================= */
+.homepage-container {
+    display: flex !important;
+    flex-direction: row !important; /* 强制水平横排 */
+    flex-wrap: nowrap !important;   /* 绝对不允许换行！右边掉不下去 */
+    gap: 40px;
+}
+
+.left-column, .right-column {
+    flex: 1 1 50% !important; /* 强制它们各占一半的空间 */
+    min-width: 0 !important;  /* 【核心魔法】防止左栏的图片/长文字撑破宽度！ */
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+
+/* =========================================
+   4. 各种框体 & 列表样式
+   ========================================= */
+.intro-box, .toc-box {
+    padding: 20px 25px;
+    border-radius: 8px;
+}
+.intro-box { background-color: #eaf2fb; }
+.toc-box { background-color: #f7f7f5; }
+
+details { margin-bottom: 10px; }
+summary {
+    cursor: pointer;
+    font-weight: bold;
+    padding: 5px 0;
+    user-select: none;
+}
+summary:hover { color: #666; }
+
+.chapter-list {
+    list-style: none;
+    padding-left: 20px;
+}
+.chapter-list li { margin: 8px 0; }
+.chapter-list a { text-decoration: none; color: #333; }
+.chapter-list a:hover { text-decoration: underline; }
+
+/* =========================================
+   5. 人物卡 & 小头像
+   ========================================= */
+.character-list {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+/* --- 新增这部分代码，控制卡片内部排版 --- */
+.character-card {
+    display: flex;
+    flex-direction: column; /* 关键：让图片和文字垂直居中排列 */
+    align-items: center;    /* 关键：让图片和文字水平居中对齐 */
+    gap: 8px;               /* 图片和文字之间的间距 */
+    text-decoration: none;  /* 顺手去掉链接自带的下划线，会更好看 */
+    color: #333;            /* 改一下字体颜色，不想要默认的蓝色可以改这里 */
+}
+/* ---------------------------------------- */
+
+/* 你原来的头像代码保留 */
+.avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #eee;
+    transition: transform 0.2s;
+}
+
+.avatar:hover { 
+    transform: scale(1.05); 
+}
+
+/* 你可以给名字也单独加点样式（可选） */
+.character-name {
+    font-size: 14px;
+}
+
+
+/* =========================================
+   6. 小说正文页样式
+   ========================================= */
+.chapter-content { max-width: 700px; margin: 0 auto; }
+.content-body { font-size: 1.1em; margin-bottom: 50px; }
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+.pagination a { text-decoration: none; color: #0066cc; }
+
+
+/* =========================================
+   正文插画展示优化
+   ========================================= */
+.content-body img {
+    max-width: 100%;      /* 图片绝不超出屏幕宽度 */
+    height: auto;         /* 保持原图比例 */
+    border-radius: 12px;  /* 唯美的圆角 */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08); /* 高级感的画框阴影 */
+    display: block;
+    margin: 20px auto;    /* 图片自动居中 */
+}
+
+
+/* =========================================
+   7. 手机端深度适配优化 (核心排序魔法)
+   ========================================= */
+@media (max-width: 768px) {
+    .homepage-container {
+        flex-direction: column;
+        gap: 20px; 
+    }
+    
+    /* 打破左右两栏限制 */
+    .left-column, .right-column {
+        display: contents; 
+    }
+
+    /* 手机端独家顺序：简介 -> 目录 -> 人设 -> 世界观 */
+    .intro-box { order: 1; }
+    .toc-box { order: 2; }
+    .character-section { order: 3; }
+    .worldview-box { order: 4; }
+    
+    body { padding: 20px 15px; }
+    .intro-box, .toc-box { padding: 15px; }
+    .character-list { flex-wrap: wrap; justify-content: flex-start; }
+    
+    .pagination {
+        flex-direction: column; 
+        align-items: center;    
+        gap: 20px;              
+        text-align: center;
+        padding-bottom: 30px;
+    }
+}

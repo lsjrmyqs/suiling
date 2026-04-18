@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ .Title }} - {{ .Site.Title }}</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <main class="main-content">
+        <!-- 具体页面的内容会被塞到这里 -->
+        {{ block "main" . }}{{ end }}
+    </main>
+</body>
+</html>

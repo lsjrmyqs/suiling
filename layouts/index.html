@@ -1,0 +1,98 @@
+{{ define "main" }}
+<header class="site-header">
+    <!-- 这里放网站头像，确保你的 static/images 里有 cover.jpg -->
+    <img src="img/yuexiaosan.png" alt="封面" class="site-logo">
+    <h1>《清理浊化世界》</h1>
+</header>
+
+<!-- 大外框：控制左右两栏 -->
+<div class="homepage-container">
+    
+    <!-- ====== 左栏开始 ====== -->
+    <div class="left-column">
+        
+        <!-- 简介区 -->
+        <div class="intro-box">
+            <h3>简介</h3>
+            {{ .Content }}
+        </div>
+
+        <!-- 人物卡区 -->
+        <div class="character-section">
+            <h3>人物卡</h3>
+            
+            <details>
+                <summary>驭灵者</summary>
+                <div class="character-list">
+                    <!-- 头像示例 -->
+                    <!--  第 1 个角色：游逸曦 (复制下面这整段来增加角色)  -->
+                    <a href="/roles/youyixi/" class="character-card">
+                        <img src="img/youmatch.png" alt="游逸曦" class="avatar">
+                        <span class="character-name">游逸曦</span>
+                    </a>
+                    <!-- 第 1 个角色结束 -->
+
+                    <!--  第 2 个角色：谢去意 (这就是复制出来的第二个)  -->
+                    <a href="/roles/xiequyi/" class="character-card">
+                        <img src="img/xiematch.png" alt="谢去意" class="avatar">
+                        <span class="character-name">谢去意</span>
+                    </a>
+                    <!-- 第 2 个角色结束 -->
+
+                </div>
+            </details>
+
+
+        <details>
+                <summary>碎灵生物</summary>
+                <div class="character-list">
+                    <!-- 放碎灵生物的头像 -->
+                </div>
+            </details>
+
+            <details>
+                <summary>普通人</summary>
+                <div class="character-list">
+                    <!-- 放普通人的头像 -->
+                </div>
+            </details>
+        </div>
+        
+    </div> 
+    <!-- ====== 左栏结束 ====== (极其关键的闭合标签) -->
+
+    
+    <!-- ====== 右栏开始 ====== -->
+    <div class="right-column">
+        
+        <!-- 目录区 -->
+        <div class="toc-box">
+            <h3>目录</h3>
+            
+            <details open>
+                <summary>卷一：</summary>
+                <ul class="chapter-list">
+                    {{ range (where (where .Site.RegularPages "Section" "chapter") ".Params.vol" 1).ByWeight }}
+                        <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+                    {{ end }}
+                </ul>
+            </details>
+            
+        
+        </div>
+
+        <!-- 世界观区 -->
+        <div class="worldview-box">
+            <h3>世界观速览</h3>
+            <ul>
+                <li><strong>碎灵：</strong>自然界物质，极易被同化...</li>
+                <li><strong>浊灵：</strong>碎灵的反面，具有强大的同化效果。</li>
+                <li><strong>有灵物：</strong>浸润碎灵并维持特定功能的物体。</li>
+            </ul>
+        </div>
+        
+    </div>
+    <!-- ====== 右栏结束 ====== -->
+
+</div>
+{{ end }}
