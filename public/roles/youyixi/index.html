@@ -3,7 +3,7 @@
 <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>游逸曦 - 角色立绘 - My New Hugo Project</title>
+    <title>游逸曦 - 角色档案 - My New Hugo Project</title>
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
@@ -11,49 +11,80 @@
         
         
 <article class="chapter-content">
-    <h1>游逸曦 - 角色立绘</h1>
+    <h1>游逸曦 - 角色档案</h1>
     
     
-    <div class="comment-notice">
-         <b>互动提示：</b>长按或选中文本即可进行 划线 与 段落批注 。<br>
-        <span class="small-text">首次使用需注册账号，请注意<b>前往填写的邮箱点击验证链接</b>方可成功发言。点击右上角眼睛图标可隐藏所有批注。</span>
-    </div>
-
+    
+    
+    
     <div class="content-body">
-        <p><img src="/img/youdesign.png" alt="游逸曦全身立绘"></p>
-<h3 id="基本档案">基本档案</h3>
-<ul>
-<li>年龄：未知</li>
-<li>身份：碎灵研究学院成员</li>
-</ul>
+        
+<div class="game-gallery">
+    
+
+<div class="game-card">
+    <div class="card-img-box" onclick="openLightbox('\/img\/youdesign.png')">
+        <img src="/img/youdesign.png" alt="设定图">
+    </div>
+    <div class="card-info">
+        <p><strong>基础立绘</strong></p>
+<p>游逸曦立绘（节省画技版本），手里拿着的是她的标志性武器（色彩和谐简化版本）。</p>
 
     </div>
+</div>
 
-    <div class="content-body">
-        <p><img src="/img/youdesign.png" alt="游逸曦全身立绘"></p>
-<h3 id="基本档案">基本档案</h3>
-<ul>
-<li>年龄：未知</li>
-<li>身份：碎灵研究学院成员</li>
-</ul>
+
+<div class="game-card">
+    <div class="card-img-box" onclick="openLightbox('\/img\/guangdesign.png')">
+        <img src="/img/guangdesign.png" alt="设定图">
+    </div>
+    <div class="card-info">
+        <p><strong>光寒·有灵物</strong></p>
+<p>一把能力为化解的剑。</p>
+
+    </div>
+</div>
+
+
+
+</div>
+
 
     </div>
 
     
     <div class="pagination">
         
-        
-            <span></span> 
+            <a href="/roles/yueliushu/">← 上一个：月流疏 - 角色档案</a>
         
 
-        <a href="/">返回目录</a>
+        <a href="/">返回主页</a>
 
+        
+            <a href="/roles/xiequyi/">下一个：谢去意 - 角色档案 →</a>
         
     </div>
 </article>
 
 
-<script src="https://hypothes.is/embed.js" async></script>
+
+
+
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <span class="close-btn">&times;</span>
+    <img id="lightbox-img" src="" alt="大图">
+</div>
+
+<script>
+
+function openLightbox(src) {
+    document.getElementById('lightbox-img').src = src;
+    document.getElementById('lightbox').style.display = 'flex';
+}
+function closeLightbox() {
+    document.getElementById('lightbox').style.display = 'none';
+}
+</script>
 
 
     </main>

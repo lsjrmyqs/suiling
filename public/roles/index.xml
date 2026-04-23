@@ -8,11 +8,32 @@
     <language>en-us</language>
     <atom:link href="http://localhost:1313/roles/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>游逸曦 - 角色立绘</title>
+      <title>景知州 - 角色档案</title>
+      <link>http://localhost:1313/roles/jingzhizhou/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/roles/jingzhizhou/</guid>
+      <description>&lt;div class=&#34;game-gallery&#34;&gt;&#xD;&#xA;    &#xD;&#xA;&#xD;&#xA;&lt;div class=&#34;game-card&#34;&gt;&#xD;&#xA;    &lt;div class=&#34;card-img-box&#34; onclick=&#34;openLightbox(&#39;\/img\/jiudesign.png&#39;)&#34;&gt;&#xD;&#xA;        &lt;img src=&#34;http://localhost:1313/img/jiudesign.png&#34; alt=&#34;设定图&#34;&gt;&#xD;&#xA;    &lt;/div&gt;&#xD;&#xA;    &lt;div class=&#34;card-info&#34;&gt;&#xD;&#xA;        &lt;p&gt;&lt;strong&gt;旧枝·有灵物&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;碎灵产地附近一棵枯萎的树上折下来的，是什么品种呢？&lt;/p&gt;&#xA;&#xD;&#xA;    &lt;/div&gt;&#xD;&#xA;&lt;/div&gt;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&lt;/div&gt;</description>
+    </item>
+    <item>
+      <title>月流疏 - 角色档案</title>
+      <link>http://localhost:1313/roles/yueliushu/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/roles/yueliushu/</guid>
+      <description>&lt;div class=&#34;game-gallery&#34;&gt;&#xD;&#xA;    &#xD;&#xA;&#xD;&#xA;&lt;div class=&#34;game-card&#34;&gt;&#xD;&#xA;    &lt;div class=&#34;card-img-box&#34; onclick=&#34;openLightbox(&#39;\/img\/yuetcs.png&#39;)&#34;&gt;&#xD;&#xA;        &lt;img src=&#34;http://localhost:1313/img/yuetcs.png&#34; alt=&#34;设定图&#34;&gt;&#xD;&#xA;    &lt;/div&gt;&#xD;&#xA;    &lt;div class=&#34;card-info&#34;&gt;&#xD;&#xA;        &lt;p&gt;&lt;strong&gt;古风if&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;古风造型，画面中另有一番故事，很久很久以前……&lt;/p&gt;&#xA;&#xD;&#xA;    &lt;/div&gt;&#xD;&#xA;&lt;/div&gt;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&lt;/div&gt;</description>
+    </item>
+    <item>
+      <title>游逸曦 - 角色档案</title>
       <link>http://localhost:1313/roles/youyixi/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/roles/youyixi/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/img/youdesign.png&#34; alt=&#34;游逸曦全身立绘&#34;&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;基本档案&#34;&gt;基本档案&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;年龄：未知&lt;/li&gt;&#xA;&lt;li&gt;身份：碎灵研究学院成员&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+      <description>&lt;div class=&#34;game-gallery&#34;&gt;&#xD;&#xA;    &#xD;&#xA;&#xD;&#xA;&lt;div class=&#34;game-card&#34;&gt;&#xD;&#xA;    &lt;div class=&#34;card-img-box&#34; onclick=&#34;openLightbox(&#39;\/img\/youdesign.png&#39;)&#34;&gt;&#xD;&#xA;        &lt;img src=&#34;http://localhost:1313/img/youdesign.png&#34; alt=&#34;设定图&#34;&gt;&#xD;&#xA;    &lt;/div&gt;&#xD;&#xA;    &lt;div class=&#34;card-info&#34;&gt;&#xD;&#xA;        &lt;p&gt;&lt;strong&gt;基础立绘&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;游逸曦立绘（节省画技版本），手里拿着的是她的标志性武器（色彩和谐简化版本）。&lt;/p&gt;&#xA;&#xD;&#xA;    &lt;/div&gt;&#xD;&#xA;&lt;/div&gt;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&lt;div class=&#34;game-card&#34;&gt;&#xD;&#xA;    &lt;div class=&#34;card-img-box&#34; onclick=&#34;openLightbox(&#39;\/img\/guangdesign.png&#39;)&#34;&gt;&#xD;&#xA;        &lt;img src=&#34;http://localhost:1313/img/guangdesign.png&#34; alt=&#34;设定图&#34;&gt;&#xD;&#xA;    &lt;/div&gt;&#xD;&#xA;    &lt;div class=&#34;card-info&#34;&gt;&#xD;&#xA;        &lt;p&gt;&lt;strong&gt;光寒·有灵物&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;一把能力为化解的剑。&lt;/p&gt;&#xA;&#xD;&#xA;    &lt;/div&gt;&#xD;&#xA;&lt;/div&gt;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&lt;/div&gt;</description>
+    </item>
+    <item>
+      <title>谢去意 - 角色档案</title>
+      <link>http://localhost:1313/roles/xiequyi/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/roles/xiequyi/</guid>
+      <description>&lt;div class=&#34;game-gallery&#34;&gt;&#xD;&#xA;    &#xD;&#xA;&#xD;&#xA;&lt;div class=&#34;game-card&#34;&gt;&#xD;&#xA;    &lt;div class=&#34;card-img-box&#34; onclick=&#34;openLightbox(&#39;\/img\/xieq1.png&#39;)&#34;&gt;&#xD;&#xA;        &lt;img src=&#34;http://localhost:1313/img/xieq1.png&#34; alt=&#34;设定图&#34;&gt;&#xD;&#xA;    &lt;/div&gt;&#xD;&#xA;    &lt;div class=&#34;card-info&#34;&gt;&#xD;&#xA;        &lt;p&gt;&lt;strong&gt;Q版&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;燃烧的火焰……。&lt;/p&gt;&#xA;&#xD;&#xA;    &lt;/div&gt;&#xD;&#xA;&lt;/div&gt;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&lt;/div&gt;</description>
     </item>
   </channel>
 </rss>

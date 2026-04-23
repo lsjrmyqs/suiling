@@ -33,38 +33,92 @@ body {
 }
 
 /* =========================================
-   段评功能提示框
+   折叠式互动引导框
    ========================================= */
-.comment-notice {
-    background-color: #f7f7f5; /* 配合你首页目录框的柔和灰底 */
+.comment-notice-wrapper {
+    margin: 20px 0 40px 0;
+}
+
+.comment-guide {
+    background-color: #f7f7f5;
     border-left: 4px solid #def9ff; /* 左侧加一条你人物卡悬浮时的粉色装饰线 */
+    border-radius: 8px;
     padding: 12px 18px;
-    margin: 20px 0 30px 0; /* 控制它和标题、正文的间距 */
-    border-radius: 6px;
-    color: #444;
+    border: 1px solid #eee;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+}
+
+.comment-guide summary {
     font-size: 0.95em;
-    line-height: 1.6;
+    color: #444;
+    cursor: pointer;
+    user-select: none;
+    margin: 0; /* 抵消原有的margin */
+    padding: 4px 0;
 }
-.comment-notice .small-text {
-    font-size: 0.85em;
-    color: #777;
-    margin-top: 4px;
-    display: block;
+
+.comment-guide summary:hover {
+    color: #a6bfd7; /* 鼠标悬浮变蓝色 */
 }
+
+/* 展开后的具体步骤内容 */
+.guide-content {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px dashed #ccc; /* 虚线分割线，显得精致 */
+    font-size: 0.9em;
+    color: #555;
+    line-height: 1.7;
+}
+
+.guide-content ol {
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+.guide-content li {
+    margin-bottom: 8px;
+}
+
+/* 重点警告的邮箱验证文字 */
+.warning-text {
+    color: #220403;
+    background-color: #def9ff;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+/* 前往加入的按钮 */
+.join-group-btn {
+    display: inline-block;
+    background-color: #def9ff;
+    color: white !important;
+    padding: 8px 18px;
+    border-radius: 20px;
+    text-decoration: none !important;
+    font-weight: bold;
+    transition: all 0.2s;
+}
+.join-group-btn:hover {
+    background-color: #def9ff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(100, 149, 237, 0.4);
+}
+
 
 /* =========================================
    3. 首页两栏布局 (电脑端)
    ========================================= */
 .homepage-container {
     display: flex !important;
-    flex-direction: row !important; /* 强制水平横排 */
-    flex-wrap: nowrap !important;   /* 绝对不允许换行！右边掉不下去 */
+    flex-direction: row; /* 强制水平横排 */
+    flex-wrap: nowrap;   /* 绝对不允许换行！右边掉不下去 */
     gap: 40px;
 }
 
 .left-column, .right-column {
-    flex: 1 1 50% !important; /* 强制它们各占一半的空间 */
-    min-width: 0 !important;  /* 【核心魔法】防止左栏的图片/长文字撑破宽度！ */
+    flex: 1 1 50%; /* 强制它们各占一半的空间 */
+    min-width: 0;  /* 【核心魔法】防止左栏的图片/长文字撑破宽度！ */
     display: flex;
     flex-direction: column;
     gap: 30px;
@@ -163,20 +217,94 @@ summary:hover { color: #666; }
     display: block;
     margin: 20px auto;    /* 图片自动居中 */
 }
+/* =========================================
+   游戏级画廊卡片 (人设页专属)
+   ========================================= */
+.game-gallery {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto; /* 核心：超出宽度允许横向滑动 */
+    padding: 10px 0 30px 0;
+    scroll-snap-type: x mandatory; /* 手机上滑动时会有吸附停顿感 */
+}
+
+/* 美化横向滚动条 */
+.game-gallery::-webkit-scrollbar { height: 8px; }
+.game-gallery::-webkit-scrollbar-track { background: #f1f1f1; border-radius: 4px; }
+.game-gallery::-webkit-scrollbar-thumb { background: #def9ff; border-radius: 4px; }
+
+/* 卡片样式 */
+.game-card {
+    flex: 0 0 280px; /* 卡片宽度固定，不管放几张图都不会挤压变形 */
+    background: #fdfdfd;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+    border: 1px solid #eee;
+    scroll-snap-align: start; 
+    display: flex;
+    flex-direction: column;
+}
+
+/* 图片外框（解决尺寸不一的核心） */
+.card-img-box {
+    height: 380px; /* 把所有图片强制卡在这个高度 */
+    cursor: zoom-in;
+    overflow: hidden;
+}
+
+.card-img-box img {
+    width: 100%;
+    height: 100%;
+    /* object-fit: cover 是真正的神！
+       长图扁图它都能自动按比例填满这个框，多余的部分隐藏，绝不拉伸变形！ */
+    object-fit: cover; 
+    transition: transform 0.3s ease;
+}
+.card-img-box:hover img { transform: scale(1.05); }
+
+/* 文字介绍区 */
+.card-info {
+    padding: 15px;
+    font-size: 0.9em;
+    color: #444;
+    border-top: 3px solid #eee; /* 卡片中间的一抹粉色分割线 */
+}
+.card-info p { margin: 5px 0; }
+
+/* =========================================
+   全屏大图模式 (Lightbox)
+   ========================================= */
+.lightbox {
+    display: none; /* 默认隐藏 */
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.85); /* 黑色半透明遮罩 */
+    z-index: 9999; /* 保证盖住所有东西 */
+    justify-content: center; align-items: center;
+    cursor: zoom-out;
+}
+.lightbox img {
+    max-width: 90%; max-height: 90%;
+    /* 这里用 contain，保证点开大图时，不论你画得多长多宽，都会完整显示不裁剪！ */
+    object-fit: contain; 
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+.close-btn { position: absolute; top: 20px; right: 40px; color: white; font-size: 50px; }
 
 
 /* =========================================
    7. 手机端深度适配优化 (核心排序魔法)
    ========================================= */
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
     .homepage-container {
-        flex-direction: column;
+        flex-direction: column !important; /*  关键：强制手机端变回上下竖排！ */
         gap: 20px; 
     }
     
     /* 打破左右两栏限制 */
     .left-column, .right-column {
-        display: contents; 
+        display: contents !important;      /*  关键：强制手机端解除左右限制 */
     }
 
     /* 手机端独家顺序：简介 -> 目录 -> 人设 -> 世界观 */
@@ -186,7 +314,7 @@ summary:hover { color: #666; }
     .worldview-box { order: 4; }
     
     body { padding: 20px 15px; }
-    .intro-box, .toc-box { padding: 15px; }
+    .intro-box, .toc-box, .worldview-box { padding: 15px; }
     .character-list { flex-wrap: wrap; justify-content: flex-start; }
     
     .pagination {

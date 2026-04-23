@@ -1,0 +1,8 @@
+<div class="game-card">
+    <div class="card-img-box" onclick="openLightbox('{{ .Get `img` }}')">
+        <img src="{{ .Get `img` }}" alt="设定图">
+    </div>
+    <div class="card-info">
+        {{ .Inner | markdownify }}
+    </div>
+</div>

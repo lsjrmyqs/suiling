@@ -2,38 +2,77 @@
 <article class="chapter-content">
     <h1>{{ .Title }}</h1>
     
-    <!--  新增的批注功能提示框  -->
-    <div class="comment-notice">
-         <b>互动提示：</b>长按或选中文本即可进行 划线 与 段落批注 。<br>
-        <span class="small-text">首次使用需注册账号，请注意<b>前往填写的邮箱点击验证链接</b>方可成功发言。点击右上角眼睛图标可隐藏所有批注。</span>
+    <!--  仅在小说正文页显示评论引导  -->
+    {{ if eq .Section "chapter" }}
+    <div class="comment-notice-wrapper">
+        <details class="comment-guide">
+            <summary>  <b>互动提示：</b>本文开启了段评与划线功能，注册并加入即可开启并查看他人互动。</summary>
+            
+            <div class="guide-content">
+                <p>为维持讨论氛围，本站已关闭公开评论，请按以下步骤解锁互动权限：</p>
+                <ol>
+                    <li>点击下方按钮，进入邀请页，根据提示注册账号。</li>
+                    <li class="warning-text">  <b>极度重要：注册后请务必前往您填写的邮箱，点击验证链接</b>（不验证将无法成功发言）。</li>
+                    <li>验证完成后，在邀请页点击加入群组。</li>
+                    <li>返回本页并刷新，点开右上角侧边栏，将顶部切换至新入群组，即可开始划线批注。</li>
+                </ol>
+                <a href="https://hypothes.is/groups/2KPBb61G/suiling" target="_blank" class="join-group-btn">  点击前往加入。</a>
+            </div>
+        </details>
     </div>
-
+    {{ end }}
+    
+    <!--  正文区域  -->
     <div class="content-body">
         {{ .Content }}
     </div>
 
-    <div class="content-body">
-        {{ .Content }}
-    </div>
-
-    <!-- 上一章、下一章导航 -->
+    <!--  底部翻页导航  -->
     <div class="pagination">
-        <!-- 注意：Hugo默认按时间或Weight排序，Prev是前一个(上一章)，Next是后一个(下一章) -->
         {{ with .NextInSection }}
-            <a href="{{ .RelPermalink }}">← 上一章：{{ .Title }}</a>
+            <a href="{{ .RelPermalink }}">← {{ if eq $.Section "chapter" }}上一章{{ else }}上一个{{ end }}：{{ .Title }}</a>
         {{ else }}
-            <span></span> <!-- 占位用，保持布局平衡 -->
+            <span></span>
         {{ end }}
 
-        <a href="/">返回目录</a>
+        <a href="/">返回主页</a>
 
         {{ with .PrevInSection }}
-            <a href="{{ .RelPermalink }}">下一章：{{ .Title }} →</a>
+            <a href="{{ .RelPermalink }}">{{ if eq $.Section "chapter" }}下一章{{ else }}下一个{{ end }}：{{ .Title }} →</a>
         {{ end }}
     </div>
 </article>
 
-<!--  就是这行神奇的代码，接入 Hypothes.is 段落批注功能  -->
+<!--  仅在小说正文页加载：封杀Public + 批注插件本体  -->
+{{ if eq .Section "chapter" }}
+<script>
+window.hypothesisConfig = function () {
+    return {
+        showHighlights: true,
+        // 这里填真正的群组 ID！
+        groupsAllowlist:['2KPBb61G'] 
+    };
+};
+</script>
 <script src="https://hypothes.is/embed.js" async></script>
+{{ end }}
+
+<!--  所有页面都能用的：看大图的画框组件  -->
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <span class="close-btn">&times;</span>
+    <img id="lightbox-img" src="" alt="大图">
+</div>
+
+<script>
+// 点击放大的魔法脚本
+function openLightbox(src) {
+    document.getElementById('lightbox-img').src = src;
+    document.getElementById('lightbox').style.display = 'flex';
+}
+function closeLightbox() {
+    document.getElementById('lightbox').style.display = 'none';
+}
+</script>
 
 {{ end }}
+

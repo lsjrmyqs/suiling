@@ -18,6 +18,8 @@
   </url><url>
     <loc>http://localhost:1313/chapter/08/</loc>
   </url><url>
+    <loc>http://localhost:1313/chapter/09/</loc>
+  </url><url>
     <loc>http://localhost:1313/categories/</loc>
   </url><url>
     <loc>http://localhost:1313/chapter/</loc>
@@ -26,7 +28,13 @@
   </url><url>
     <loc>http://localhost:1313/tags/</loc>
   </url><url>
+    <loc>http://localhost:1313/roles/jingzhizhou/</loc>
+  </url><url>
+    <loc>http://localhost:1313/roles/yueliushu/</loc>
+  </url><url>
     <loc>http://localhost:1313/roles/youyixi/</loc>
+  </url><url>
+    <loc>http://localhost:1313/roles/xiequyi/</loc>
   </url><url>
     <loc>http://localhost:1313/</loc>
   </url>
